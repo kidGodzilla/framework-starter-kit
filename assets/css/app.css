@@ -1,0 +1,19 @@
+/* Example CSS (Remove!) */
+body, * {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 30px;
+    min-height: 100vh;
+}
+
+#outlet {
+    min-height: 75vh;
+}
+
+footer {
+    position: fixed;
+    bottom: 50px;
+}
+/* ^^ Example CSS (Remove!) ^^ */
