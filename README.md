@@ -14,15 +14,15 @@ grunt
 ## Getting started
 
 ### Intended Application structure
-*Templates* exist in your `assets/templates` directory, and are loaded individually by the application.
+**Templates** exist in your `assets/templates` directory, and are loaded individually by the application.
 
-Your global *application* logic should exist within `js/app.js`.
+Your global **application** logic should exist within `js/app.js`.
 
-Static *data models* (POJOs) should exist within `js/models.js`.
+Static **data models** *(POJOs)* should exist within `js/models.js`.
 
-Your application should be composed of *routes*, declared within `js/routes.js`.
+Your application should be composed of **routes**, declared within `js/routes.js`.
 
-Your application should utilize *global event listeners*, in the form of event delegates, declared within `js/events.js`.
+Your application should utilize **global event listeners**, in the form of event delegates, declared within `js/events.js`.
 
 ### Where are dependencies loaded?
-Dependencies are hotloaded by `framework/loader.js` at the end of the file. They are also compiled inside your gruntfile.
+Dependencies are hot-loaded by `framework/loader.js` at the end of the file. They are also compiled inside your gruntfile.
