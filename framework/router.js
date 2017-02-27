@@ -226,10 +226,20 @@
                         route.templates.forEach(function (templateName) {
                             if ($('template[data-pathname="'+templateName+'"]').length) {
                                 var out = Template.compileTemplate($('template[data-pathname="'+templateName+'"]').html());
-                                renderedTemplate += out();
+
+                                if (out && typeof(out) === "function") {
+                                    renderedTemplate += out();
+                                } else if (out && typeof(out) === "string") {
+                                    renderedTemplate += out
+                                }
                             } else if ($('template[name="'+templateName+'"]').length) {
                                 var out = Template.compileTemplate($('template[name="'+templateName+'"]').html());
-                                renderedTemplate += out();
+
+                                    if (out && typeof(out) === "function") {
+                                        renderedTemplate += out();
+                                    } else if (out && typeof(out) === "string") {
+                                        renderedTemplate += out
+                                    }
                             }
                         });
 
@@ -272,7 +282,9 @@
 
         var pathState = Router.usePathname ? '/' + path : '#' + path;
 
-        if (!preserveState) window.history.pushState({ pageTitle: document.title }, document.title, pathState);
+        try {
+            if (!preserveState) window.history.pushState({ pageTitle: document.title }, document.title, pathState);
+        } catch (e) { console.log(e) }
 
         // Translate nullstring -> "index" route
         if (path === "") path = "index";
